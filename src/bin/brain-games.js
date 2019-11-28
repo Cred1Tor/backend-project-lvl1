@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 
-import * as index from '..';
+import { greet, getName } from '..';
 
-index.greet();
-index.getName();
+greet();
+getName();
