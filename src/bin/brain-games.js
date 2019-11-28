@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 
-import greetByName from '..';
+import * as index from '..';
 
-console.log('Welcome to the Brain Games!');
-greetByName();
+index.greet();
+index.getName();
