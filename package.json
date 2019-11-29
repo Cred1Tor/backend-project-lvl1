@@ -1,7 +1,8 @@
 {
   "name": "brain-games",
   "version": "1.0.0",
-  "description": "Hexlet backend project 1",
+  "description": "\"Brain Games\", Hexlet backend project 1",
+  "keywords": ["hexlet", "project", "javascript", "course"],
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
