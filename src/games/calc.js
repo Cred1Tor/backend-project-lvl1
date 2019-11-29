@@ -1,11 +1,19 @@
 import * as _ from 'lodash';
 
-const add = (a, b) => (a + b);
-const sub = (a, b) => (a - b);
-const mul = (a, b) => (a * b);
+const operators = ['+', '-', '*'];
 
-const operators = [[add, '+'], [sub, '-'], [mul, '*']];
-
+const operation = (operator, a, b) => {
+  switch (operator) {
+    case '+':
+      return a + b;
+    case '-':
+      return a - b;
+    case '*':
+      return a * b;
+    default:
+      throw new Error(`Unknown operator '${operator}'`);
+  }
+};
 
 export default (message) => {
   switch (message) {
@@ -14,11 +22,9 @@ export default (message) => {
     case 'questionAndAnswer': {
       const number1 = _.random(100);
       const operator = operators[_.random(2)];
-      const operatorSymbol = operator[1];
-      const operatorFunc = operator[0];
-      const number2 = operatorSymbol === '*' ? _.random(10) : _.random(100);
-      const question = `${number1} ${operatorSymbol} ${number2}`;
-      const answer = operatorFunc(number1, number2).toString();
+      const number2 = operator === '*' ? _.random(10) : _.random(100);
+      const question = `${number1} ${operator} ${number2}`;
+      const answer = operation(operator, number1, number2).toString();
       return [question, answer];
     }
     default:
