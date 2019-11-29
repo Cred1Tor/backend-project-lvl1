@@ -8,21 +8,25 @@ export const getName = () => {
   return name;
 };
 
-export const playEven = () => {
+const getGameObjective = (game) => game('gameObjective');
+
+const getQuestionAndAnswer = (game) => game('questionAndAnswer');
+
+export const playGame = (game) => {
   greet();
-  console.log('Answer "yes" if the number is even, otherwise answer "no".\n');
+  console.log(`${getGameObjective(game)}\n`);
   const userName = getName();
 
   const playOneTurn = () => {
-    const number = Math.floor(Math.random() * 100);
-    const answer = readlineSync.question(`Question: ${number}\nYour answer: `);
-    const correctAnswer = number % 2 === 0 ? 'yes' : 'no';
-    if (answer === correctAnswer) {
+    const [question, correctAnswer] = getQuestionAndAnswer(game);
+    const userAnswer = readlineSync.question(`Question: ${question}\nYour answer: `);
+
+    if (userAnswer === correctAnswer) {
       console.log('Correct!');
       return true;
     }
-    console.log(`'${answer}' is a wrong answer ;( Correct answer was '${correctAnswer}'.`);
-    console.log(`Let's try again, ${userName}`);
+
+    console.log(`'${userAnswer}' is a wrong answer ;( Correct answer was '${correctAnswer}'.`);
     return false;
   };
 
@@ -31,7 +35,13 @@ export const playEven = () => {
       console.log(`Congratulations, ${userName}!`);
       return true;
     }
-    return playOneTurn() ? playNTurns(n - 1) : false;
+
+    if (playOneTurn()) {
+      return playNTurns(n - 1);
+    }
+
+    console.log(`Let's try again, ${userName}`);
+    return false;
   };
 
   return playNTurns(3);
