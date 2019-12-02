@@ -1,6 +1,6 @@
 import * as _ from 'lodash';
 
-import { random } from '..';
+import { random, playGame } from '..';
 
 const getRandomProgressionArray = () => {
   const start = random(20);
@@ -17,7 +17,7 @@ const getRandomProgressionArray = () => {
   return fillProgression([start]);
 };
 
-export default (message) => {
+const progressionGame = (message) => {
   switch (message) {
     case 'gameObjective':
       return 'What number is missing in the progression?';
@@ -33,3 +33,5 @@ export default (message) => {
       throw new Error(`Unknown message '${message}'`);
   }
 };
+
+export default () => playGame(progressionGame);
