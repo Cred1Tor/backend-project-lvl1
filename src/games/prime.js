@@ -1,7 +1,7 @@
 import * as _ from 'lodash';
 
 const isPrime = (n) => {
-  if (n === 1) {
+  if (n < 2) {
     return false;
   }
 
