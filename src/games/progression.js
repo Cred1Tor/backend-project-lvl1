@@ -1,8 +1,10 @@
 import * as _ from 'lodash';
 
+import { random } from '..';
+
 const getRandomProgressionArray = () => {
-  const start = _.random(20);
-  const increment = _.random(1, 10);
+  const start = random(20);
+  const increment = random(1, 10);
 
   const fillProgression = (acc) => {
     if (acc.length === 10) {
@@ -21,7 +23,7 @@ export default (message) => {
       return 'What number is missing in the progression?';
     case 'questionAndAnswer': {
       const progression = getRandomProgressionArray();
-      const indexToHide = _.random(9);
+      const indexToHide = random(9);
       const answer = progression[indexToHide].toString();
       progression[indexToHide] = '..';
       const question = progression.join(' ');

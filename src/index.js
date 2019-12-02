@@ -1,5 +1,8 @@
 import readlineSync from 'readline-sync';
 
+export const random = (min, max) => (max === undefined ? random(0, min)
+  : Math.floor(Math.random() * (max + 1 - min) + min));
+
 export const getName = () => {
   const name = readlineSync.question('May I have your name? ');
   console.log(`Hello, ${name}\n`);
