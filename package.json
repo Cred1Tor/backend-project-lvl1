@@ -2,7 +2,12 @@
   "name": "brain-games",
   "version": "1.0.0",
   "description": "\"Brain Games\", Hexlet backend project 1",
-  "keywords": ["hexlet", "project", "javascript", "course"],
+  "keywords": [
+    "hexlet",
+    "project",
+    "javascript",
+    "course"
+  ],
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -42,7 +47,6 @@
     "eslint-plugin-import": "^2.18.2"
   },
   "dependencies": {
-    "lodash": "^4.17.15",
     "readline-sync": "^1.4.10"
   }
 }

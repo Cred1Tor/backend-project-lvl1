@@ -1,5 +1,4 @@
-import * as _ from 'lodash';
-import { playGame } from '..';
+import { playGame, random } from '..';
 
 const isPrime = (n) => {
   if (n < 2) {
@@ -21,7 +20,7 @@ const isPrime = (n) => {
 const gameObjective = 'Answer "yes" if given number is prime. Otherwise answer "no".';
 
 const getQuestionAndAnswer = () => {
-  const number = _.random(1, 200);
+  const number = random(1, 200);
   const answer = isPrime(number) ? 'yes' : 'no';
   return [number, answer];
 };

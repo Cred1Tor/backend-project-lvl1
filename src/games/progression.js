@@ -1,5 +1,3 @@
-import * as _ from 'lodash';
-
 import { random, playGame } from '..';
 
 const getRandomProgressionArray = () => {
@@ -11,7 +9,8 @@ const getRandomProgressionArray = () => {
       return acc;
     }
 
-    return fillProgression([...acc, _.last(acc) + increment]);
+    const last = acc[acc.length - 1];
+    return fillProgression([...acc, last + increment]);
   };
 
   return fillProgression([start]);
