@@ -17,21 +17,15 @@ const getRandomProgressionArray = () => {
   return fillProgression([start]);
 };
 
-const progressionGame = (message) => {
-  switch (message) {
-    case 'gameObjective':
-      return 'What number is missing in the progression?';
-    case 'questionAndAnswer': {
-      const progression = getRandomProgressionArray();
-      const indexToHide = random(9);
-      const answer = progression[indexToHide].toString();
-      progression[indexToHide] = '..';
-      const question = progression.join(' ');
-      return [question, answer];
-    }
-    default:
-      throw new Error(`Unknown message '${message}'`);
-  }
+const gameObjective = 'What number is missing in the progression?';
+
+const getQuestionAndAnswer = () => {
+  const progression = getRandomProgressionArray();
+  const indexToHide = random(9);
+  const answer = progression[indexToHide].toString();
+  progression[indexToHide] = '..';
+  const question = progression.join(' ');
+  return [question, answer];
 };
 
-export default () => playGame(progressionGame);
+export default () => playGame(gameObjective, getQuestionAndAnswer);

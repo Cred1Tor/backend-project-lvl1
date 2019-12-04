@@ -9,17 +9,13 @@ export const getName = () => {
   return name;
 };
 
-const getGameObjective = (game) => game('gameObjective');
-
-const getQuestionAndAnswer = (game) => game('questionAndAnswer');
-
-export const playGame = (game) => {
+export const playGame = (gameObjective, getQuestionAndAnswer) => {
   console.log('Welcome to  the Brain Games!');
-  console.log(`${getGameObjective(game)}\n`);
+  console.log(`${gameObjective}\n`);
   const userName = getName();
 
   const playOneTurn = () => {
-    const [question, correctAnswer] = getQuestionAndAnswer(game);
+    const [question, correctAnswer] = getQuestionAndAnswer();
     const userAnswer = readlineSync.question(`Question: ${question}\nYour answer: `);
 
     if (userAnswer === correctAnswer) {
