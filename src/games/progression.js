@@ -1,4 +1,6 @@
-import { random, playGame } from '..';
+import playGame from '..';
+
+import random from '../utils';
 
 const getProgressionArray = (start, increment, length) => {
   const fillProgression = (acc) => {

@@ -1,4 +1,6 @@
-import { playGame, random } from '..';
+import playGame from '..';
+
+import random from '../utils';
 
 const gcd = (a, b) => {
   const remainder = a % b;
