@@ -19,19 +19,16 @@ export default (gameObjective, getQuestionAndAnswer) => {
     return false;
   };
 
-  const playNTurns = (n) => {
-    if (n === 0) {
-      console.log(`Congratulations, ${userName}!`);
-      return true;
+  const turnsToPlay = 3;
+
+  for (let i = turnsToPlay; i > 0; i -= 1) {
+    const outcome = playOneTurn();
+    if (!outcome) {
+      console.log(`Let's try again, ${userName}`);
+      return false;
     }
+  }
 
-    if (playOneTurn()) {
-      return playNTurns(n - 1);
-    }
-
-    console.log(`Let's try again, ${userName}`);
-    return false;
-  };
-
-  return playNTurns(3);
+  console.log(`Congratulations, ${userName}!`);
+  return true;
 };
