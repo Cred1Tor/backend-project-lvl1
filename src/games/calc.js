@@ -2,7 +2,7 @@ import { playGame, random } from '..';
 
 const operators = ['+', '-', '*'];
 
-const operation = (operator, a, b) => {
+const calculate = (operator, a, b) => {
   switch (operator) {
     case '+':
       return a + b;
@@ -22,7 +22,7 @@ const getQuestionAndAnswer = () => {
   const operator = operators[random(operators.length - 1)];
   const number2 = operator === '*' ? random(10) : random(100);
   const question = `${number1} ${operator} ${number2}`;
-  const answer = operation(operator, number1, number2).toString();
+  const answer = calculate(operator, number1, number2).toString();
   return [question, answer];
 };
 
