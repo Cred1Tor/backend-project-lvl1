@@ -20,11 +20,11 @@ const calculate = (operator, a, b) => {
 const gameObjective = 'What is the result of the expression?';
 
 const getQuestionAndAnswer = () => {
-  const number1 = random(100);
+  const a = random(100);
   const operator = operators[random(operators.length - 1)];
-  const number2 = operator === '*' ? random(10) : random(100);
-  const question = `${number1} ${operator} ${number2}`;
-  const answer = calculate(operator, number1, number2).toString();
+  const b = operator === '*' ? random(10) : random(100);
+  const question = `${a} ${operator} ${b}`;
+  const answer = calculate(operator, a, b).toString();
   return [question, answer];
 };
 

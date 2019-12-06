@@ -13,10 +13,10 @@ const gcd = (a, b) => {
 const gameObjective = 'Find the greatest common divisor of given numbers.';
 
 const getQuestionAndAnswer = () => {
-  const number1 = random(10, 100);
-  const number2 = random(10, 100);
-  const question = `${number1} ${number2}`;
-  const answer = gcd(number1, number2).toString();
+  const a = random(10, 100);
+  const b = random(10, 100);
+  const question = `${a} ${b}`;
+  const answer = gcd(a, b).toString();
   return [question, answer];
 };
 
