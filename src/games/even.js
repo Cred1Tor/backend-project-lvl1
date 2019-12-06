@@ -8,8 +8,9 @@ const gameObjective = 'Answer "yes" if the number is even, otherwise answer "no"
 
 const getQuestionAndAnswer = () => {
   const value = random(100);
+  const question = value;
   const answer = isEven(value) ? 'yes' : 'no';
-  return [value, answer];
+  return [question, answer];
 };
 
 export default () => playGame(gameObjective, getQuestionAndAnswer);
