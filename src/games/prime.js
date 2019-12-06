@@ -16,7 +16,6 @@ const isPrime = (n) => {
   return iter(2);
 };
 
-
 const gameObjective = 'Answer "yes" if given number is prime. Otherwise answer "no".';
 
 const getQuestionAndAnswer = () => {
