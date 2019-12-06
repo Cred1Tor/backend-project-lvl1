@@ -1,11 +1,8 @@
 import { random, playGame } from '..';
 
-const getRandomProgressionArray = () => {
-  const start = random(20);
-  const increment = random(1, 10);
-
+const getProgressionArray = (start, increment, length) => {
   const fillProgression = (acc) => {
-    if (acc.length === 10) {
+    if (acc.length === length) {
       return acc;
     }
 
@@ -19,8 +16,13 @@ const getRandomProgressionArray = () => {
 const gameObjective = 'What number is missing in the progression?';
 
 const getQuestionAndAnswer = () => {
-  const progression = getRandomProgressionArray();
-  const indexToHide = random(9);
+  const progressionStart = random(20);
+  const progressionIncrement = random(1, 15);
+  const progressionLength = 10;
+  const progression = getProgressionArray(
+    progressionStart, progressionIncrement, progressionLength,
+  );
+  const indexToHide = random(progressionLength - 1);
   const answer = progression[indexToHide].toString();
   progression[indexToHide] = '..';
   const question = progression.join(' ');
