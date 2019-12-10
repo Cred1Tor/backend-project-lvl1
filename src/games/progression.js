@@ -25,9 +25,9 @@ const getQuestionAndAnswer = () => {
   const progression = getProgression(
     start, increment, length,
   );
-  const indexToHide = random(length - 1);
-  const answer = progression[indexToHide].toString();
-  progression[indexToHide] = '..';
+  const hiddenItemIndex = random(length - 1);
+  const answer = progression[hiddenItemIndex].toString();
+  progression[hiddenItemIndex] = '..';
   const question = progression.join(' ');
   return [question, answer];
 };
