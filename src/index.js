@@ -1,5 +1,7 @@
 import readlineSync from 'readline-sync';
 
+const turnsCount = 3;
+
 export default (gameObjective, getQuestionAndAnswer) => {
   console.log('Welcome to  the Brain Games!');
   console.log(`${gameObjective}\n`);
@@ -19,9 +21,7 @@ export default (gameObjective, getQuestionAndAnswer) => {
     return false;
   };
 
-  const turnsToPlay = 3;
-
-  for (let i = turnsToPlay; i > 0; i -= 1) {
+  for (let i = turnsCount; i > 0; i -= 1) {
     const outcome = playOneTurn();
     if (!outcome) {
       console.log(`Let's try again, ${userName}`);
