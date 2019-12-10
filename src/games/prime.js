@@ -21,9 +21,8 @@ const isPrime = (n) => {
 const gameObjective = 'Answer "yes" if given number is prime. Otherwise answer "no".';
 
 const getQuestionAndAnswer = () => {
-  const value = random(1, 200);
-  const question = value;
-  const answer = isPrime(value) ? 'yes' : 'no';
+  const question = random(1, 200);
+  const answer = isPrime(question) ? 'yes' : 'no';
   return [question, answer];
 };
 
