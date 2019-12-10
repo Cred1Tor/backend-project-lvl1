@@ -15,17 +15,17 @@ const getProgression = (start, increment, length) => {
   return fillProgression([start]);
 };
 
-const progressionLength = 10;
+const length = 10;
 
 const gameObjective = 'What number is missing in the progression?';
 
 const getQuestionAndAnswer = () => {
-  const progressionStart = random(20);
-  const progressionIncrement = random(1, 15);
+  const start = random(20);
+  const increment = random(1, 15);
   const progression = getProgression(
-    progressionStart, progressionIncrement, progressionLength,
+    start, increment, length,
   );
-  const indexToHide = random(progressionLength - 1);
+  const indexToHide = random(length - 1);
   const answer = progression[indexToHide].toString();
   progression[indexToHide] = '..';
   const question = progression.join(' ');
