@@ -1,7 +1,7 @@
 ## Brain games
 ### A Hexlet project
 
-[![Build Status](https://travis-ci.org/Cred1Tor/backend-project-lvl1.svg?branch=master)](https://travis-ci.org/Cred1Tor/backend-project-lvl1)[![Maintainability](https://api.codeclimate.com/v1/badges/46dfcdeb14b9cfbb17e6/maintainability)](https://codeclimate.com/github/Cred1Tor/backend-project-lvl1/maintainability)
+[![Build Status](https://travis-ci.org/Cred1Tor/backend-project-lvl1.svg?branch=master)](https://travis-ci.org/Cred1Tor/backend-project-lvl1) [![Maintainability](https://api.codeclimate.com/v1/badges/46dfcdeb14b9cfbb17e6/maintainability)](https://codeclimate.com/github/Cred1Tor/backend-project-lvl1/maintainability)
 
 ## Installation
 
