@@ -15,7 +15,8 @@ export default (gameObjective, getQuestionAndAnswer) => {
     }
 
     const [question, correctAnswer] = getQuestionAndAnswer();
-    const userAnswer = readlineSync.question(`Question: ${question}\nYour answer: `);
+    console.log(`Question: ${question}`);
+    const userAnswer = readlineSync.question('Your answer: ');
 
     if (userAnswer === correctAnswer) {
       console.log('Correct!');
