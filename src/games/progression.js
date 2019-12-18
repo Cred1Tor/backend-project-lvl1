@@ -9,10 +9,11 @@ const getProgression = (start, increment, length) => {
     }
 
     const last = acc[acc.length - 1];
-    return fillProgression([...acc, last + increment]);
+    const newAcc = acc.length === 0 ? [start] : [...acc, last + increment];
+    return fillProgression(newAcc);
   };
 
-  return fillProgression([start]);
+  return fillProgression([]);
 };
 
 const length = 10;
